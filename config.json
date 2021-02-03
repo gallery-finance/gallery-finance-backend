@@ -1,0 +1,11 @@
+{
+  "port": "3000",
+  "datadir" : "/var/glf/data",
+  "imageFullDir" : "/var/www/html/glf/images/full",
+  "imagePreviewDir" : "/var/www/html/glf/images/preview",
+  "allowCors" : true,
+  "imageBasePath": "https://apiv1.gallery.finance",
+  "imageFullRoute": "/images/full/",
+  "imagePreviewRoute": "/images/",
+  "externalUrlBase": "http://gallery.finance/exhibition-hall/"
+}
