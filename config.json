@@ -4,7 +4,7 @@
   "imageFullDir" : "/var/www/html/glf/images/full",
   "imagePreviewDir" : "/var/www/html/glf/images/preview",
   "allowCors" : true,
-  "imageBasePath": "https://apiv1.gallery.finance",
+  "imageBasePath": "http://test-api.gallery.finance",
   "imageFullRoute": "/images/full/",
   "imagePreviewRoute": "/images/",
   "externalUrlBase": "http://gallery.finance/exhibition-hall/"
