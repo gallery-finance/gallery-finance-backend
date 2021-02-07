@@ -69,14 +69,14 @@ function calculateHashtags(data){
 function addTokenData(d){
   data.all.unshift(d)
   data.byTokenId[d.tokenId] = d
-  data.hashtags = calculateHashtags(data.all)
+  // data.hashtags = calculateHashtags(data.all)
   var tmp = '/tmp/glf-backend-tmp-data.' + Date.now()
   fs.writeFileSync(tmp, JSON.stringify(data.all,undefined,2))
   fs.renameSync(tmp, dataFilePath)
 }
 
 data = readData()
-data.hashtags = calculateHashtags(data.all)
+// data.hashtags = calculateHashtags(data.all)
 
 
 fastify.setErrorHandler(function (error, request, reply) {
@@ -101,7 +101,7 @@ function formatToken(token){
 fastify.get('/tokens', async (request, reply) => {
   return {
     tokens: data.all.map(formatToken),
-    hashtags: data.hashtags,
+    // hashtags: data.hashtags,
   }
 })
 
@@ -132,7 +132,7 @@ fastify.get('/tokens/:tokenId', async (request, reply) => {
       value: token.artist,
     },
   ]
-  if(token.hashtags.length > 0){
+  if(token.hashtags && token.hashtags.length > 0){
     token.attributes.push({
       trait_type: 'Tags',
       value: token.hashtags.join(' '),
